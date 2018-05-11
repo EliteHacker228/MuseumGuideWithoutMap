@@ -1,4 +1,4 @@
-package com.example.max.mainwindow;
+package com.example.max.mainwindow.museumpackage;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -9,9 +9,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.max.mainwindow.R;
+
 import java.util.ArrayList;
 
 public class ListFragment extends Fragment {
+    //Фрагмент, отвечающий за вывод списка музеев
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 

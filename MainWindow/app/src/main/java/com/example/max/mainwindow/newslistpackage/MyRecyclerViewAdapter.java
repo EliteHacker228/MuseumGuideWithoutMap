@@ -1,16 +1,17 @@
-package com.example.max.mainwindow;
+package com.example.max.mainwindow.newslistpackage;
 
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.max.mainwindow.R;
+import com.example.max.mainwindow.UniversalWebview;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -47,16 +48,16 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         holder.NewsDate.setText(news.getNewsDate());
         holder.NewsTime.setText(news.getNewsTime());
 
-       // if(!news.getNewsPicURL().equals("")||!news.getNewsPicURL().equals(" ")) {
-           // Log.d("ALAAAAAAAAAAAAAARM", news.getNewsPicURL());
+
+
         if(news.getNewsPicURL().isEmpty()){
             Picasso.get().load("https://yt3.ggpht.com/a-/AJLlDp3w3Ok_TD46pLqIlFB7_TbbwUHQ4D867hKRhQ=s900-mo-c-c0xffffffff-rj-k-no").into(holder.NewsPoster);
-            Log.d("NewsPosterLost", "потрачено "+news.getNewsPicURL());
+
         }else {
             Picasso.get().load(news.getNewsPicURL()).resize(80, 80).into(holder.NewsPoster);
-            Log.d("NewsPosterLostGet", news.getNewsPicURL());
+
         }
-       // }
+
         holder.newsClicker.setRecord(news);
 
     }
@@ -109,9 +110,10 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         @Override
         public void onClick(View v) {
 
-           Intent intent = new Intent(context, NewsWebview.class);
+           Intent intent = new Intent(context, UniversalWebview.class);
             position=mData.indexOf(newsElement);
-           intent.putExtra("NewsLink", mData.get(position).getNewsLink());
+            intent.putExtra("Passkey", "News");
+           intent.putExtra("URL", mData.get(position).getNewsLink());
            context.startActivity(intent);
 
             //Toast.makeText(v.getContext(), "Clicked on "+position, Toast.LENGTH_SHORT).show();

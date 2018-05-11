@@ -1,4 +1,4 @@
-package com.example.max.mainwindow;
+package com.example.max.mainwindow.newslistpackage;
 
 public class NewsElement {
     String sourceYear;

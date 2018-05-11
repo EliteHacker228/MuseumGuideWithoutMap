@@ -21,9 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MuseumActivity"></activity>
-        <activity android:name=".NewsWebview"></activity>
-        <activity android:name=".MusemsPersonalWebView"></activity>
+        <activity android:name=".museumpackage.MuseumActivity" />
+        <activity android:name=".newslistpackage.NewsWebview" />
+        <activity android:name=".museumpackage.MusemsPersonalWebView" />
+        <activity android:name=".UniversalWebview"></activity>
     </application>
 
 </manifest>

@@ -1,23 +1,23 @@
-package com.example.max.mainwindow;
+package com.example.max.mainwindow.museumpackage;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.max.mainwindow.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 public class MuseumAdapter extends RecyclerView.Adapter<MuseumAdapter.MuseumsViewHolder>{
-
+//Адаптер списка музеев
     private ArrayList<Museum> museums;
     private Context context;
 
@@ -83,7 +83,6 @@ public class MuseumAdapter extends RecyclerView.Adapter<MuseumAdapter.MuseumsVie
 
             Intent intent = new Intent(context, MuseumActivity.class);
             intent.putExtra("name", museum.getMname()); //name
-            Log.d("INTEEEEEEEEEEEEEEEEEENT", museum.getMname());
             intent.putExtra("URL", museum.getURL());
             intent.putExtra("trivia", museum.getTrivia()); //trivia
             intent.putExtra("website", museum.getWebsite()); //website

@@ -1,22 +1,21 @@
-package com.example.max.mainwindow;
+package com.example.max.mainwindow.museumpackage;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.max.mainwindow.R;
+import com.example.max.mainwindow.UniversalWebview;
 import com.squareup.picasso.Picasso;
 
 public class MuseumActivity extends AppCompatActivity {
-
+//Личная активность музея
     TextView name, website, trivia, adress, phone;
     ConstraintLayout museumContainer;
     LinearLayout museumInformContainer;
@@ -74,10 +73,12 @@ public class MuseumActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MusemsPersonalWebView.class);
+                Intent intent = new Intent(getApplicationContext(), UniversalWebview.class);
                 String message="http://"+website.getText();
+
+                intent.putExtra("Passkey", "Museum");
+
                 intent.putExtra("URL", message);
-                Log.d("Load URL", message);
                 startActivity(intent);
 
                 //Toast.makeText(getApplicationContext(), "Скоро сделаю переход на сайты", Toast.LENGTH_SHORT).show();

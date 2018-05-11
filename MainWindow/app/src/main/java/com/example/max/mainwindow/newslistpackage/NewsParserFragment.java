@@ -1,4 +1,4 @@
-package com.example.max.mainwindow;
+package com.example.max.mainwindow.newslistpackage;
 
 
 import android.app.Fragment;
@@ -9,14 +9,12 @@ import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.google.gson.Gson;
+import com.example.max.mainwindow.R;
 
-import org.json.JSONObject;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -24,7 +22,6 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Iterator;
 
 //import android.support.v4.app.Fragment;
@@ -162,7 +159,6 @@ public class NewsParserFragment extends Fragment {
         fullSourceList();
         NewThread newThread = new NewThread();
         newThread.execute();
-        Log.d("Parser", "Запуск потока");
         RecyclerView recyclerView = view.findViewById(R.id.rv_list);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(view.getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
@@ -275,7 +271,6 @@ public class NewsParserFragment extends Fragment {
                     }
                     String pic_url = url_interpretator(doc2.getElementsByTag("img").get(1).attr("src"));
                     String readyURL = pic_url;
-                    Log.d("picture", contents.text() + " " + pic_url);
                     newsPicURL=readyURL;
 
                     sourceYear=dat.getSourceYear();

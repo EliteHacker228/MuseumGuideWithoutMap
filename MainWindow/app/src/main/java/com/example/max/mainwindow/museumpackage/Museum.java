@@ -1,8 +1,9 @@
-package com.example.max.mainwindow;
+package com.example.max.mainwindow.museumpackage;
 
 import android.graphics.Bitmap;
 
 public class Museum {
+    //Класс музея
     String mname;
     String adress;
     String phone;
