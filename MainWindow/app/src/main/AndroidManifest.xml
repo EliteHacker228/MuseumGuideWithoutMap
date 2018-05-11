@@ -23,6 +23,7 @@
         </activity>
         <activity android:name=".MuseumActivity"></activity>
         <activity android:name=".NewsWebview"></activity>
+        <activity android:name=".MusemsPersonalWebView"></activity>
     </application>
 
 </manifest>
